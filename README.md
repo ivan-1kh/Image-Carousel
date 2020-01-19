@@ -1,3 +1,3 @@
-#Image Carousel
+Image Carousel
 
-Github Pages:
+Github Pages: https://ivankhuri.github.io/Image-Carousel/
