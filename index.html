@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Carousel</title>
+    <style>
+        html {
+            margin: 0;
+            height: 100%;
+        }
+        
+        body {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        
+        img {
+            width: 8%;
+            height: 8%;
+            margin-top: 20%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body background="1.jpg">
+    <img src="right.png" onclick="switchImg('left')" style="transform: scaleX(-1);" />
+    <img src="right.png" onclick="switchImg('right')" style="margin-right: 0px; margin-left: 83%;" />
+    <script>
+        var body = document.querySelector('body');
+        var currentImg = 1;
+        var numberOfImgs = 4;
+
+        function switchImg(str) {
+            if (str === 'left') {
+                currentImg--;
+                if (currentImg === 0)
+                    currentImg = numberOfImgs;
+            } else {
+                currentImg++;
+                if (currentImg > numberOfImgs)
+                    currentImg = 1;
+            }
+            body.background = currentImg.toString() + ".jpg";
+        }
+    </script>
+</body>
+
+</html>
